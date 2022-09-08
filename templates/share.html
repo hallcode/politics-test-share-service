@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {{nickname}} is a {{description}}! Find out your place on the political
+      spectrum | The Politics Test
+    </title>
+
+    <link rel="icon" type="image/x-icon" href="/s/static/tpt_icon.svg" />
+
+    <meta
+      property="og:title"
+      content="{{nickname}} is a {{description}}! Find out your place on the political
+      spectrum | The Politics Test"
+    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="{{image_url}}" />
+
+    <meta name="twitter:title" content="{{nickname}} is a {{description}}!" />
+    <meta
+      name="twitter:description"
+      content="Find out your place on the political spectrum | The Politics Test"
+    />
+    <meta name="twitter:image" content="{{image_url}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body>
+    <p>
+      This page should redirect automatically in a few seconds. If nothing
+      happens,
+      <a href="{{ url }}">click here to view {{nickname}}'s results.</a>.
+    </p>
+    <script>
+      function doRedirect() {
+        window.location = "{{ url }}";
+      }
+
+      document.addEventListener("load", doRedirect());
+    </script>
+  </body>
+</html>
