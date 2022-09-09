@@ -3,9 +3,13 @@ runtime: python38
 #service: tpt-flask
 
 handlers:
-  - url: /s/.*
-    secure: always
-    script: app.app
-
   - url: /s/static
     static_dir: static
+
+  - url: /s/.*
+    secure: always
+    script: auto
+
+  - url: /
+    secure: always
+    static_dir: politics_test
