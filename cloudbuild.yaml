@@ -13,7 +13,7 @@ steps:
     entrypoint: yarn
     args:
       - install
-      - "?production"
+      - "--production"
     dir: "politics-test"
 
   # yarn build
