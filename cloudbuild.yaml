@@ -8,13 +8,19 @@ steps:
   - name: "gcr.io/cloud-builders/git"
     args: ["clone", "https://github.com/hallcode/politics-test.git"]
 
-  # Build the front-end with yarn
+  # yarn install
   - name: node
     entrypoint: yarn
     args:
       - install
       - "?production"
-      - "&& yarn build"
+    dir: "politics-test"
+
+  # yarn build
+  - name: node
+    entrypoint: yarn
+    args:
+      - build
     dir: "politics-test"
 
   # Deploy to app-engine
