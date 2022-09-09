@@ -10,6 +10,33 @@ handlers:
     secure: always
     script: auto
 
-  - url: /
+  - url: /(.*\.css)
+    mime_type: text/css
+    static_files: politics-test/dist/\1
+    upload: politics-test/dist/(.*\.css)
+
+  - url: /(.*\.ico)
+    mime_type: image/x-icon
+    static_files: politics-test/dist/\1
+    upload: politics-test/dist/(.*\.ico)
+    expiration: "7d"
+
+  - url: /(.*\.js)
+    mime_type: text/javascript
+    static_files: politics-test/dist/\1
+    upload: politics-test/dist/(.*\.js)
+
+  - url: /(.*\.(svg|svgz))
+    mime_type: images/svg+xml
+    static_files: politics-test/dist/\1
+    upload: politics-test/dist/(.*\.(svg|svgz))
+
+  - url: /(.*\..+)$
     secure: always
-    static_dir: politics_test
+    static_files: politics-test/dist/\1
+    upload: politics-test/dist/(.*\..+)$
+
+  - url: /.*
+    secure: always
+    static_files: politics-test/dist/index.html
+    upload: politics-test/dist/index.html

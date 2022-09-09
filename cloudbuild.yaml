@@ -1,0 +1,22 @@
+steps:
+  # Install Flask App
+  - name: python
+    entrypoint: pip
+    args: ["install", "-r", "requirements.txt", "--user"]
+
+  # Clone front-end (React) app repo
+  - name: "gcr.io/cloud-builders/git"
+    args: ["clone", "https://github.com/hallcode/politics-test.git"]
+
+  # Build the front-end with yarn
+  - name: node
+    entrypoint: yarn
+    args:
+      - install
+      - build
+    dir: "politics-test"
+
+  # Deploy to app-engine
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: app
+    args: ["deploy"]

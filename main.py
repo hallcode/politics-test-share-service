@@ -66,7 +66,7 @@ def share(token):
         ci=data["ci"],
         tp=data["tp"],
         description=data["description"],
-        url=f"https://www.politicaltest.com/view/{token}",
+        url=f"https://www.politicstest.com/view/{token}",
     )
 
 
