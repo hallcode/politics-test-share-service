@@ -1,9 +1,4 @@
 steps:
-  # Install Flask App
-  - name: python
-    entrypoint: pip
-    args: ["install", "-r", "requirements.txt", "--user"]
-
   # Clone front-end (React) app repo
   - name: "gcr.io/cloud-builders/git"
     args: ["clone", "https://github.com/hallcode/politics-test.git"]
