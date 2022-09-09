@@ -13,7 +13,8 @@ steps:
     entrypoint: yarn
     args:
       - install
-      - build
+      - "?production"
+      - "&& yarn build"
     dir: "politics-test"
 
   # Deploy to app-engine
