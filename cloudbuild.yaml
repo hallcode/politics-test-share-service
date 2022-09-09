@@ -23,6 +23,9 @@ steps:
     dir: "politics-test"
 
   # Deploy to app-engine
-  - name: "gcr.io/cloud-builders/gcloud"
-    entrypoint: app
-    args: ["deploy"]
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "bash"
+    args:
+      - gcloud
+      - app
+      - deploy
